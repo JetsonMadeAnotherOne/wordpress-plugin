@@ -13,13 +13,13 @@
 <?php
 	
 	function DBP_insert_data() {
-		global $wpdb;
-		$table_name = $wpdb->prefix . 'wp_dbp_tb_login';
-		
-		$DBP_name = $_POST['name'];
-		$DBP_content = $_POST['content'];
 		if (isset($_POST['save'])) {
-			$wpdb->insert($table_name,
+			global $wpdb;
+			
+			$DBP_name = $_POST['name'];
+			$DBP_content = $_POST['content'];
+			
+			$wpdb->insert('wp_dbp_tb_login',
 				array(
 					'name' => $DBP_name,
 					'content' => $DBP_content

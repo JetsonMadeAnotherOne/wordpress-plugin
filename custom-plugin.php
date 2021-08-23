@@ -27,7 +27,7 @@
 		add_menu_page(
 			'DBP_custom plugin',
 			'DBP_custom Plugin',
-			'manage options',
+			'manage_options',
 			'DBP_custom_plugin_page',
 			'DBP_add_front_page'
 		);
