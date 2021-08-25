@@ -6,24 +6,18 @@
 			$id = $DBP_row->id;
 			$name = $DBP_row->name;
 			$content = $DBP_row->content;
-			
-			?>
-            <tr>
-                <td><?php echo $id; ?></td>
-                <td><?php echo $name; ?></td>
-                <td><?php echo $content; ?></td>
-            </tr>
-		<?php } ?>
+		}
+	?>
 </div>
 
 <form method="post">
     <label>
         NAME:
-        <textarea name="name"></textarea>
+        <textarea name="name"><?php echo $name; ?></textarea>
     </label>
     <label>
         CONTENT:
-        <textarea name="content"></textarea>
+        <textarea name="content"><?php echo $content; ?></textarea>
     </label>
     <button type="submit" name="save">Save</button>
 </form>
@@ -50,6 +44,7 @@
 			);
 		}
 	}
+
 
 ?>
 	

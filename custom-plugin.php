@@ -21,9 +21,12 @@
 	include_once("DBP_db_file.php");
 	
 	register_activation_hook(__FILE__, "DBP_tb_create");
+	
+	register_activation_hook(__FILE__, "DBP_tb_insert");
 	function my_plugin_remove_database() {
 		global $wpdb;
 		$sql = "DROP TABLE IF EXISTS wp_dbp_tb_login";
+		
 		$wpdb->query($sql);
 	}
 	
@@ -38,21 +41,6 @@
 			'DBP_add_front_page'
 		);
 	}
-	
-	function write_here_activation_actions() {
-		do_action('wp_writehere_extension_activation');
-	}
-	
-	register_activation_hook(__FILE__, 'write_here_activation_actions');
-	function write_here_default_options() {
-		$default = array(
-			'name' => 'sdfsf',
-			'content' => 'ghkjhkhjk'
-		);
-		get_option('write_here_options', $default);
-	}
-	
-	add_action('wp_writehere_extension_activation', 'write_here_default_options');
 
 
 ?>
