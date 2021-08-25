@@ -11,6 +11,7 @@
 </div>
 
 <form method="post">
+    <!--    <div style="background: red; width: 50px; height: 100px"/>-->
     <label>
         NAME:
         <textarea name="name"><?php echo $name; ?></textarea>

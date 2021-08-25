@@ -41,6 +41,20 @@
 			'DBP_add_front_page'
 		);
 	}
-
+	
+	function wp_head_extra_code() {
+		global $wpdb;
+		$DBP_results = $wpdb->get_results("SELECT * FROM wp_dbp_tb_login");
+		foreach ($DBP_results as $DBP_row) {
+			$content = $DBP_row->content;
+		}
+		echo $content;
+	}
+	
+	;
+	
+	add_action("wp_head", "wp_head_extra_code");
+	
+	
 
 ?>
